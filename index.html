@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
+    <title>Responsive and Attractive Portfolio</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #1a1a1d;
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        a {
+            color: #f8f8f8;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #ffcc00;
+        }
+
+        h1, h2, h3, h4 {
+            margin: 0;
+            font-weight: 600;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+        }
+
+        /* Header */
+        #header {
+            background-color: #242526;
+            padding: 20px;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        #header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        #header nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: #ffcc00;
+        }
+
+        /* Home Section */
+        #Home {
+            height: 100vh;
+            background: url('hero-image.jpg') no-repeat center center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        #Home h3 {
+            font-size: 1.5rem;
+            color: #ffcc00;
+        }
+
+        #Home h2 {
+            font-size: 3rem;
+            color: #ffffff;
+            margin: 20px 0;
+            animation: fadeInDown 2s ease;
+        }
+
+        #Home h3, #Home h2 {
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* About Section */
+        #About {
+            background-color: #202122;
+            padding: 50px 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            transition: all 0.5s ease;
+        }
+
+        #About:hover {
+            background-color: #2e2f33;
+        }
+
+        #About img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 5px solid #ffcc00;
+            transition: transform 0.5s ease;
+        }
+
+        #About img:hover {
+            transform: scale(1.1);
+        }
+
+        #About p {
+            max-width: 700px;
+            text-align: center;
+            color: #d1d1d1;
+            font-size: 1.1rem;
+        }
+
+        /* Services Section */
+        #Services {
+            background-color: #2e2f33;
+            padding: 50px 15px;
+        }
+
+        #Services h2 {
+            color: #ffcc00;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .service-grid {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .service-grid img {
+            width: 300px;
+            height: 300px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .service-grid img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Testimonials Section */
+        #Testimonials {
+            background-color: #202122;
+            padding: 50px 15px;
+            text-align: center;
+        }
+
+        #Testimonials h2 {
+            color: #ffcc00;
+        }
+
+        .testimonial-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            color: #d1d1d1;
+            font-size: 1.2rem;
+        }
+
+        .testimonial-grid h3 {
+            margin-top: 20px;
+            color: #ffcc00;
+        }
+
+        /* Achievements Section */
+        #Achievements {
+            background-color: #292929;
+            padding: 50px 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #Achievements h2 {
+            color: #ffcc00;
+            margin-bottom: 30px;
+        }
+
+        #Achievements ul {
+            max-width: 600px;
+            list-style: none;
+        }
+
+        #Achievements li {
+            margin: 10px 0;
+            font-size: 1.1rem;
+            color: #d1d1d1;
+        }
+
+        /* Contact Section */
+        #contact {
+            background-color: #1a1a1d;
+            padding: 50px 15px;
+        }
+
+        #contact h2 {
+            color: #ffcc00;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        #contact form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        #contact input, #contact textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            background-color: #2e2f33;
+            color: #ffffff;
+            border: 2px solid #353535;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        #contact input:focus, #contact textarea:focus {
+            outline: none;
+            border-color: #ffcc00;
+        }
+
+        #contact button {
+            background-color: #ffcc00;
+            color: #1a1a1d;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        #contact button:hover {
+            background-color: #e6b800;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #242526;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        footer .social-icons a {
+            font-size: 1.5em;
+            color: #ffcc00;
+            transition: transform 0.3s ease;
+        }
+
+        footer .social-icons a:hover {
+            transform: scale(1.2);
+        }
+
+        footer p {
+            margin-top: 15px;
+            color: #d1d1d1;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            #About, #Achievements {
+                text-align: center;
+            }
+
+            #Services .service-grid {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            #Home h2 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <h1>Hafsa Sheikh</h1>
+            <nav>
+                <a href="#Home">Home</a>
+                <a href="#About">About</a>
+                <a href="#Services">Services</a>
+                <a href="#Testimonials">Testimonials</a>
+                <a href="#Achievements">Achievements</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Home Section -->
+    <section id="Home">
+        <h3>Hello, I'm Hafsa Sheikh</h3>
+        <h2>Your Freelance Programmer</h2>
+    </section>
+
+    <!-- About Section -->
+    <section id="About">
+        <h2>About Me</h2>
+        <img src="C:\html project1\images\Screenshot 2024-08-29 152910.png" alt="Hafsa Sheikh">
+        <p>
+            I'm a passionate freelance programmer with a love for solving complex problems. I specialize in creating clean, efficient code and have worked on a wide variety of projects. Let's build something amazing together!
+        </p>
+    </section>
+
+    <!-- Services Section -->
+    <section id="Services">
+        <h2>Services</h2>
+        <div class="service-grid">
+            <img src="C:\html project1\images\Easy-Steps-To-Outsource-Customer-Service-Featured-Image_2157317931.webp" alt="Service 1">
+            <img src="C:\html project1\images\outsourced-customer-support-service.webp" alt="Service 2">
+            <img src="C:\html project1\images\outsourcing-customer-service.png" alt="Service 3">
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="Testimonials">
+        <h2>Testimonials</h2>
+        <div class="testimonial-grid">
+            <div>
+                <h3>Client 1</h3>
+                <p>Hafsa's work exceeded my expectations. Highly recommended!</p>
+            </div>
+            <div>
+                <h3>Client 2</h3>
+                <p>Professional, timely, and incredibly skilled. A pleasure to work with!</p>
+            </div>
+            <div>
+                <h3>Client 3</h3>
+                <p>Very satisfied with the results. Will hire again for future projects.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="Achievements">
+        <h2>Achievements</h2>
+        <ul>
+            <li>Developed a successful e-commerce platform.</li>
+            <li>Created an AI-based recommendation system for a startup.</li>
+            <li>Built a mobile-friendly SaaS dashboard for business analytics.</li>
+        </ul>
+        <img src="C:\html project1\images\achievement.jpg" alt="Achievements">
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form>
+            <input type="text" name="name" placeholder="Your Name">
+            <input type="email" name="email" placeholder="Your Email">
+            <textarea name="message" rows="5" placeholder="Your Message"></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="social-icons">
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+        </div>
+        <p>&copy; 2024 Hafsa Sheikh</p>
+    </footer>
+</body>
+
+</html>
